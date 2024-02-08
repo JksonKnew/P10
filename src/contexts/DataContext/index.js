@@ -41,7 +41,7 @@ export const DataProvider = ({ children }) => {
       value={{
         data,
         error,
-        last: data && data.events?.sort((A, B) => new Date(A.date) > new Date(B.date) ? -1 : null)[0],
+        last: data && data.events?.sort((A, B) => new Date(A.date) > new Date(B.date))[0],
       }}
     >
       {children}
