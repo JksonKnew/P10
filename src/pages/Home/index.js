@@ -119,7 +119,7 @@ const Page = () => {
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}
-          date={new Date(last?.date)}
+          date={new Date(last?.date)} // Await ??
           small
           label="boom"
         />
