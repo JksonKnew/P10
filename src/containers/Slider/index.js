@@ -24,7 +24,7 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => ( 
-        <React.Fragment key={`${event.title}-${event.id}`}>
+        <React.Fragment key={`${event.title}`}>
           <div
             // key={event.title}
             className={`SlideCard SlideCard--${
@@ -40,7 +40,9 @@ const Slider = () => {
               </div>
             </div>
           </div>
-          <div className="SlideCard__paginationContainer">
+        </React.Fragment>
+      ))}
+                <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
               {byDateDesc.map((dot, radioIdx) => (
                 <input
@@ -53,8 +55,6 @@ const Slider = () => {
               ))}
             </div>
           </div>
-        </React.Fragment>
-      ))}
     </div>
   );
 };
