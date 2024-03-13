@@ -13,4 +13,6 @@ export const MONTHS = {
   11: "décembre",
 };
 
+// Modification de l'incrémentation du tableau
+
 export const getMonth = (date) => MONTHS[date.getMonth()];

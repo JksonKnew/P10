@@ -116,6 +116,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
+        {/* Ajout de la comparaison pour prendre le components uniquement si last != null  */}
         {last && 
           <EventCard
           imageSrc={last?.cover}

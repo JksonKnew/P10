@@ -8,12 +8,12 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus?.sort((evtA, evtB) =>
-  new Date(evtA.date) > new Date(evtB.date) ? -1 : 1 ) || [];
+  new Date(evtA.date) > new Date(evtB.date) ? -1 : 1 ) || []; // Changment de l'ordre du tri du tableau
 
   const nextCard = () => {
     setTimeout(
       () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
-      2000
+      5000
     );
   };
   useEffect(() => {
@@ -24,9 +24,9 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => ( 
+        // Ajout du React.Fragment et son key
         <React.Fragment key={`${event.title}`}>
           <div
-            // key={event.title}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -44,12 +44,12 @@ const Slider = () => {
       ))}
                 <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((dot, radioIdx) => (
+              {byDateDesc.map((dot, radioIdx) => ( // intégration du parametre dot pour le key unique
                 <input
                   key={`${dot.title}`}
                   type="radio"
                   name="radio-button"
-                  checked={index === radioIdx}
+                  checked={index === radioIdx} // Changement de idx vers index
                   readOnly
                 />
               ))}
